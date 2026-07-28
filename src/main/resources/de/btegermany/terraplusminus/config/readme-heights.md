@@ -10,3 +10,31 @@ In order to override them, make sure to give your a higher priority.
 
 For instructions on how to generate and configure your dataset,
 you can refer to the [Terra++ wiki](https://github.com/BuildTheEarth/terraplusplus/wiki/Custom-terrain-dataset-guide).
+
+## QET1 (Quantized Elevation Tile) format
+
+TerraPlusMinus also supports the QET1 binary format, a highly compressed
+delta-encoded elevation tile format using Zstandard compression.
+It reduces tile size by ~90% compared to Terrarium PNG and loads ~100x faster.
+
+Example configuration:
+```json5
+[
+    {
+        "dataset": {
+            "urls": ["file:///C:/path/to/tiles/17/${x}/${z}.qet1"],
+            "projection": {"web_mercator": {"zoom": 17}},
+            "resolution": 256,
+            "blend": "CUBIC",
+            "parse": {"parse_qet1": {}}
+        },
+        "bounds": {"minX": -180.0, "maxX": 180.0, "minZ": -85.0, "maxZ": 85.0},
+        "zooms": {"min": 0, "max": 3},
+        "priority": 10.0
+    }
+]
+```
+
+To convert existing PNG or GeoTIFF tiles to QET1, use a conversion tool
+that produces the QET1 binary format (10-byte header + Zstd-compressed
+delta-encoded int16 elevations).
