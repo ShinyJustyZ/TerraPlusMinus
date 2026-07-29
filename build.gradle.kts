@@ -35,8 +35,8 @@ repositories {
 }
 
 dependencies {
-    // Pull from the QET loader fork
-    implementation("com.github.ShinyJustyZ.terraminusminus:terraminusminus-bukkit:-SNAPSHOT")
+    // Pinned to v2.2.3 (QET1 nodata fix + daporkchop dependency fix)
+    implementation("com.github.ShinyJustyZ.terraminusminus:terraminusminus-bukkit:v2.2.3")
     implementation(libs.daporkchop.lib.common)
     implementation(libs.bstats)
     implementation(libs.pluginupdater.common) {
@@ -98,14 +98,4 @@ tasks.shadowJar {
 
 tasks.assemble {
     dependsOn(tasks.shadowJar) // Ensure that the shadowJar task runs before the build task
-}
-
-configurations.all {
-    resolutionStrategy {
-        eachDependency {
-            if (requested.group == "net.daporkchop.lib" && requested.version == "0.5.7-SNAPSHOT") {
-                useVersion("0.5.7")
-            }
-        }
-    }
 }
