@@ -128,6 +128,9 @@ public final class Terraplusminus extends JavaPlugin implements Listener {
         TerraConfig.reducedConsoleMessages =
                 getConfig().getBoolean("reduced_console_messages"); // Disables console log of fetching data
 
+        TerraConfig.debugLidar =
+                getConfig().getBoolean(Properties.DEBUG_LIDAR); // Enables QET1/LiDAR debug logging
+
         registerCommands();
 
         new Updater(this);
@@ -366,6 +369,17 @@ public final class Terraplusminus extends JavaPlugin implements Listener {
                       biome: minecraft:plains
                     
                     """.replace("USE_DATASET", "" + differentBiomes)
+            );
+        }
+        if (configVersion == 1.5) {
+            getConfig().set("config_version", 1.6);
+            this.saveConfig();
+            manipulator.addLineBelow(
+                    "reduced_console_messages:",
+                    """
+
+                    # If enabled, the plugin will log QET1/LiDAR tile parsing details to the console
+                    debug_lidar: false"""
             );
         }
     }

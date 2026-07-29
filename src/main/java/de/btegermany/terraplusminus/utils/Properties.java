@@ -22,6 +22,8 @@ public class Properties {
     public static final String GENERATE_TREES = "generate_trees";
     public static final String SURFACE_MATERIAL = "surface_material";
 
+    public static final String DEBUG_LIDAR = "debug_lidar";
+
     /**
      * Configuration key for what material to replace bricks with when generating surface osm features.
      *

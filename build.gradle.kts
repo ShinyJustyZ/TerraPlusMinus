@@ -35,8 +35,8 @@ repositories {
 }
 
 dependencies {
-    // Pinned to v2.2.3 (QET1 nodata fix + daporkchop dependency fix)
-    implementation("com.github.ShinyJustyZ.terraminusminus:terraminusminus-bukkit:v2.2.3")
+    // Pinned to v2.2.4 (QET1 debug logging)
+    implementation("com.github.ShinyJustyZ.terraminusminus:terraminusminus-bukkit:v2.2.4")
     implementation(libs.daporkchop.lib.common)
     implementation(libs.bstats)
     implementation(libs.pluginupdater.common) {

@@ -4,6 +4,9 @@ prefix: '§2§lT+- §8» '
 # If disabled, the plugin will log every fetched data to the console
 reduced_console_messages: true
 
+# If enabled, the plugin will log QET1/LiDAR tile parsing details to the console
+debug_lidar: false
+
 # If this option is enabled, the plugin will copy a datapack with the name 'world-height-datapack.zip' to the world directory, which expands the world to the maximum possibly with a datapack 2032.
 height_datapack: false
 
@@ -58,4 +61,4 @@ surface_material: GRASS_BLOCK
 # -----------------------------------------------------
 
 # NOTE: Do not change
-config_version: 1.5
+config_version: 1.6
