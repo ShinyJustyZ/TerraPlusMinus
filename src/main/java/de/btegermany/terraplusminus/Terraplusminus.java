@@ -373,14 +373,8 @@ public final class Terraplusminus extends JavaPlugin implements Listener {
         }
         if (configVersion == 1.5) {
             getConfig().set("config_version", 1.6);
+            getConfig().set("debug_lidar", false);
             this.saveConfig();
-            manipulator.addLineBelow(
-                    "reduced_console_messages:",
-                    """
-
-                    # If enabled, the plugin will log QET1/LiDAR tile parsing details to the console
-                    debug_lidar: false"""
-            );
         }
     }
 
