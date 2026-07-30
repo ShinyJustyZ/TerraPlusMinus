@@ -10,6 +10,11 @@
 * Supported Minecraft-Versions are mentioned on the Releases
   itself: [Releases](https://github.com/BTE-Germany/TerraPlusMinus/releases)
 
+## QET1 Implementation
+
+This fork references the T-- fork that contains the QET1 loader. More info on QET1 [here](https://github.com/ShinyJustyZ/terra-qet1-implementation).
+Note that this fork is a proof-of-concept and should not be considered large-scale production ready and may contain some dirty fixes
+
 # Features
 
 TerraPlusMinus is a plugin which generates the real world terrain and outlines in the projection of [BuildTheEarth](https://en.wikipedia.org/wiki/Build_the_Earth).
